@@ -3,5 +3,9 @@
   <inherits name='com.google.gwt.user.User'/>
   <inherits name='com.google.gwt.user.theme.standard.Standard'/>
 
+  <inherits name="com.google.gwt.visualization.Visualization" />
+  <!-- <inherits name="com.reveregroup.gwt.imagepreloader.ImagePreloader" /> -->
+
+
   <source path=''/>
 </module>
