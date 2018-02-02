@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.test.entites.Car;
+import com.test.entites.CarWidget;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -101,6 +102,8 @@ public class App implements EntryPoint {
 				GWT.log("Car test");
 				Car c1 = new Car("Yellow");
 				GWT.log("C1 is: " + c1);
+
+				RootPanel.get().add(new CarWidget(c1));
 				// First, we validate the input.
 				errorLabel.setText("");
 				String textToServer = nameField.getText();
