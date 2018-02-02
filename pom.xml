@@ -90,5 +90,6 @@
   <modules>
     <module>app-client</module>
     <module>app-server</module>
+    <module>app-shared</module>
   </modules>
 </project>

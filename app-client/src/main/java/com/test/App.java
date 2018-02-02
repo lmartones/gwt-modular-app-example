@@ -14,6 +14,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.test.entites.Car;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -97,13 +98,14 @@ public class App implements EntryPoint {
 			 * Send the name from the nameField to the server and wait for a response.
 			 */
 			private void sendNameToServer() {
-				GWT.log("Sendin");
+				GWT.log("Car test");
+				Car c1 = new Car("Yellow");
+				GWT.log("C1 is: " + c1);
 				// First, we validate the input.
 				errorLabel.setText("");
 				String textToServer = nameField.getText();
 
 				// Then, we send the input to the server.
-				sendButton.setEnabled(false);
 				textToServerLabel.setText(textToServer);
 				serverResponseLabel.setText("");
 
