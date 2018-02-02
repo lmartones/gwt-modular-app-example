@@ -1,33 +1,68 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>test</groupId>
-    <artifactId>app</artifactId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
-  <artifactId>app-shared</artifactId>
-  <packaging>gwt-lib</packaging>
-  
-  <dependencies>
-	  <dependency>
-	      <groupId>com.google.gwt</groupId>
-	      <artifactId>gwt-user</artifactId>
-	    </dependency>
-	    <dependency>
-	      <groupId>com.google.gwt</groupId>
-	      <artifactId>gwt-dev</artifactId>
-	    </dependency>
-  </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>net.ltgt.gwt.maven</groupId>
-        <artifactId>gwt-maven-plugin</artifactId>
-        <configuration>
-          <moduleName>com.test.AppShared</moduleName>
-          <moduleShortName>AppShared</moduleShortName>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>test</groupId>
+		<artifactId>app</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>app-shared</artifactId>
+	<packaging>gwt-lib</packaging>
+
+	<properties>
+		<!-- Convenience property to set the GWT version -->
+		<gwt.version>2.8.2</gwt.version>
+
+		<!-- GWT 2.8 requires 1.8 -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<skipModule>true</skipModule>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.gwt</groupId>
+				<artifactId>gwt</artifactId>
+				<version>${gwt.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-dev</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.gwt.google-apis/gwt-visualization -->
+		<dependency>
+			<groupId>com.google.gwt.google-apis</groupId>
+			<artifactId>gwt-visualization</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>net.ltgt.gwt.maven</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<configuration>
+					<moduleName>com.test.AppShared</moduleName>
+					<moduleShortName>AppShared</moduleShortName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
